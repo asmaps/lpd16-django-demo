@@ -1,0 +1,13 @@
+<h1>Präsentationen</h1>
+
+<ul>
+{% for p in presentation_list %}
+<li>{{ p.presenter }}: {{ p.title }} ({{ p.length }} minutes)</li>
+{% endfor %}
+</ul>
+
+<form method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="Senden" />
+</form>
